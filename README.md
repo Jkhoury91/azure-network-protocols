@@ -46,7 +46,7 @@ While creating the VM, I will allow it to create a new Virtual Network (Vnet) an
 <img src="https://i.imgur.com/mpPwzTm.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/PltVBc1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <img src="https://i.imgur.com/e68b4Y2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<img src="https://i.imgur.com/Qi8NMmk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/i6sFNC1.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 I will use Remote Desktop to connect to the Windows 10 Virtual Machine.Inside the Windows 10 VM, I will install Wireshark. Upon opening Wireshark, I will filter for ICMP traffic only. Then, I'll retrieve the private IP address of the Ubuntu VM and try to ping it from within the Windows 10 VM. I will observe the ping requests and replies within Wireshark. Next, from the Windows 10 VM, I will open the command line or PowerShell and attempt to ping a public website like www.google.com, while observing the traffic in Wireshark. I'll initiate a perpetual/non-stop ping from the Windows 10 VM to the Ubuntu VM. Inside the Network Security Group used by the Ubuntu VM, I will disable incoming (inbound) ICMP traffic. I will observe the ICMP traffic in Wireshark and the command line Ping activity from the Windows 10 VM, which should show no replies due to the disabled inbound ICMP traffic. I will re-enable ICMP traffic for the Network Security Group used by the Ubuntu VM. After enabling ICMP traffic, I will observe the ICMP traffic in Wireshark and the command line Ping activity, which should now start working again. Finally, I will stop the ping activity.
